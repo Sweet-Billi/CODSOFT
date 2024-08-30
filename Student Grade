@@ -53,11 +53,13 @@ while(!right) {
 		else {
 			grades = "F";
 		}
+        double avgpercent = (avg/Subjects*100);
         
         // Display the results
         System.out.println("Total Marks Obtained is :" + totalMarks);
-        System.out.println("Average Percent Obtained is :" + avg + "%");
+        System.out.println("Average Percent Obtained is :" + avgpercent + "%");
         System.out.println("Grades Obtained is :" + grades);
+        break;
     }
     }
 }
