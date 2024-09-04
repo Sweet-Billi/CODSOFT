@@ -40,8 +40,8 @@ for(int i =0;i<5;) {
 	System.out.println();
 	
 		System.out.println("Answer for Question "+(i+1));
-	//	boolean answered = false;
-	//	while(!answered) {
+		boolean answered = false;
+	
 		ans1[i]=-1;
 		Timer timer = new Timer();
 			        TimerTask task = new TimerTask() {
@@ -63,10 +63,10 @@ for(int i =0;i<5;) {
 			            };
 			            
 			        timer.scheduleAtFixedRate(task, 1000, 1000);  
-			        
+
 		ans1[i] = sc.nextInt();
 		if((ans1[i]<5&&ans1[i]>0)||(ans1[i]==-1)){
-			//answered = true;
+			answered = true;
 			timer.cancel();
 			if(arr1[i]==ans1[i]) {
 				score++;
@@ -76,37 +76,28 @@ for(int i =0;i<5;) {
 			}
 			i++;
 		}
-		
+		else {
 			for(int o=0;o<20;o++) {
 				System.out.print("~");
 			}
 			System.out.println();
-			System.out.println("Ohh oh!! \nInvalid Option !! Try again ");
-			boolean answered = false;
-			while(!answered) {
-			ans1[i] = sc.nextInt();
-			if((ans1[i]<5&&ans1[i]>0)||(ans1[i]==-1)){
-				answered = true;
-				timer.cancel();
-				if(arr1[i]==ans1[i]) {
-					score++;
-					}
-				else if(ans1[i]==-1){
-					System.out.println("Didn't Respond !!!");
-				}
-				i++;
-			}
-			for(int o=0;o<20;o++) {
-				System.out.print("~");
-			}
-			System.out.println();
-			System.out.println("Ohh oh!! \nInvalid Option !! Try again ");
-			}
+			System.out.println("Ohh oh!! \nInvalid Option !! Try again ");	
 			//timer.cancel();
 			for(int o=0;o<20;o++) {
 				System.out.print("~");
 			}
+			while(!answered) {
+				if(ans1[i]<5&&ans1[i]>0) {
+					answered = true;
+					i++;
+					timer.cancel();
+				}
+				else {
+				System.out.println("Ohh oh!! \nInvalid Option !! Try again ");	
+			ans1[i]=sc.nextInt();
+		}
 	}
+		}
 	System.out.println();
 System.out.println();
 System.out.println("The correct answers were :");
@@ -118,6 +109,8 @@ System.out.println();
 System.out.println();
 System.out.println("Your number of correct answer was :"+score+" out of 5");
 }
+	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
