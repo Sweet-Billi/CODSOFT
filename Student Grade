@@ -8,7 +8,7 @@ public class StudentGrades {
         // Input the number of subjects
         System.out.print("Enter the number of subjects: ");
         int Subjects = scanner.nextInt();
-        int[] marks = new int[Subjects];
+        double[] marks = new double[Subjects];
         double totalMarks = 0;
 boolean right = false;
         // Input marks for each subject
@@ -27,7 +27,7 @@ boolean right = false;
         }
 while(!right) {
         // Calculate average percentage
-        double avg = totalMarks / Subjects;
+        double avg = (double)totalMarks / Subjects;
 
         // Determine grade based on average percentage
         String grades;
@@ -53,7 +53,7 @@ while(!right) {
 		else {
 			grades = "F";
 		}
-        double avgpercent = (avg/Subjects*100);
+        float avgpercent = (float) totalMarks / Subjects;
         
         // Display the results
         System.out.println("Total Marks Obtained is :" + totalMarks);
